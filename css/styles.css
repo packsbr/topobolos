@@ -1,0 +1,14 @@
+/* Basic styles */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Accordion animation */
+.accordion-content {
+    transition: all 0.3s ease-in-out;
+}
+
+.rotate-180 {
+    transform: rotate(180deg);
+}
