@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+  /* Warm, Elegant Palette */
+  --background: 40 33% 98%; 
+  --foreground: 30 10% 20%;
+  --card: 0 0% 100%;
+  --card-foreground: 30 10% 20%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 30 10% 20%;
+  --primary: 35 40% 50%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 120 10% 90%;
+  --secondary-foreground: 120 20% 30%;
+  --muted: 30 10% 94%;
+  --muted-foreground: 30 5% 45%;
+  --accent: 350 40% 96%;
+  --accent-foreground: 350 40% 40%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 30 10% 90%;
+  --input: 30 10% 90%;
+  --ring: 35 40% 50%;
+  --radius: 0.75rem;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Helper to make Tailwind variables work with HSL */
+.bg-background { background-color: hsl(var(--background)); }
+.bg-foreground { background-color: hsl(var(--foreground)); }
+.bg-card { background-color: hsl(var(--card)); }
+.bg-primary { background-color: hsl(var(--primary)); }
+.bg-primary\/5 { background-color: hsl(var(--primary) / 0.05); }
+.bg-primary\/10 { background-color: hsl(var(--primary) / 0.1); }
+.bg-primary\/20 { background-color: hsl(var(--primary) / 0.2); }
+.bg-secondary { background-color: hsl(var(--secondary)); }
+.bg-secondary\/30 { background-color: hsl(var(--secondary) / 0.3); }
+.bg-muted { background-color: hsl(var(--muted)); }
+
+.text-foreground { color: hsl(var(--foreground)); }
+.text-background { color: hsl(var(--background)); }
+.text-primary { color: hsl(var(--primary)); }
+.text-primary-foreground { color: hsl(var(--primary-foreground)); }
+.text-secondary-foreground { color: hsl(var(--secondary-foreground)); }
+.text-muted-foreground { color: hsl(var(--muted-foreground)); }
+
+.border-primary\/20 { border-color: hsl(var(--primary) / 0.2); }
+.border-primary { border-color: hsl(var(--primary)); }
+.border-border { border-color: hsl(var(--border)); }
+
+.fill-primary { fill: hsl(var(--primary)); }
