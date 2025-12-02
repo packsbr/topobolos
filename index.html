@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    
+    <meta property="og:title" content="Seus Topos de Bolos Merecem Artes Sacras" />
+    <meta property="og:description" content="O acervo completo para criar topos de bolo lindos e profissionais em minutos." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="images/hero-image.png" />
+    
+    <title>Pack Topos de Bolo Religiosos</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Configuration for Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        primary: '#d97706', // amber-600ish to match original
+                        secondary: '#fcd34d',
+                        background: '#ffffff',
+                        foreground: '#1f2937',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="font-sans text-gray-900 antialiased overflow-x-hidden">
+
+    <!-- Sales Popup -->
+    <div id="sales-popup" class="fixed bottom-4 left-4 z-50 bg-white rounded-lg shadow-lg p-4 max-w-xs border-l-4 border-green-500 flex items-start gap-3 transform transition-all duration-500 translate-x-[-200%] opacity-0">
+        <div class="bg-green-100 p-2 rounded-full">
+            <i data-lucide="check-circle" class="w-5 h-5 text-green-600"></i>
+        </div>
+        <div>
+            <p class="text-sm font-bold text-gray-800" id="popup-text">Patricia Rocha de Fortaleza</p>
+            <p class="text-xs text-gray-600">
+                acabou de comprar o <span class="font-semibold">Pacote Premium</span>
+            </p>
+            <p class="text-[10px] text-gray-400 mt-1" id="popup-time">há 4 minutos</p>
+        </div>
+        <button onclick="closePopup()" class="absolute top-1 right-1 text-gray-400 hover:text-gray-600">
+            <i data-lucide="x" class="w-3 h-3"></i>
+        </button>
+    </div>
+
+    <!-- Floating CTA (Mobile) -->
+    <div id="floating-cta" class="fixed bottom-4 left-4 right-4 z-40 md:hidden transform transition-all duration-500 translate-y-[200%] opacity-0">
+        <div class="bg-white/90 backdrop-blur-lg border border-yellow-600/20 rounded-2xl shadow-2xl p-3 flex items-center gap-4">
+            <div class="flex-1">
+                <p class="text-xs text-gray-500 font-medium">Oferta por tempo limitado</p>
+                <div class="flex items-baseline gap-2">
+                    <span class="font-bold text-gray-900 text-lg">R$ 27,00</span>
+                    <span class="text-xs text-green-600 font-bold bg-green-100 px-1.5 py-0.5 rounded">Premium</span>
+                </div>
+            </div>
+            <a href="https://pay.wiapy.com/zX0c_VRcJ" class="bg-gradient-to-r from-yellow-600 to-amber-600 text-white font-bold shadow-lg shadow-yellow-600/20 rounded-xl px-6 py-3">
+                Comprar
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-b from-amber-50/50 via-white to-white pt-12 pb-20 lg:pt-24 lg:pb-32 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-yellow-500/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-amber-100/40 rounded-full blur-3xl"></div>
+            <div class="absolute inset-0 opacity-20 mix-blend-soft-light" style="background-image: url('https://grainy-gradients.vercel.app/noise.svg');"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+                
+                <!-- Text Content -->
+                <div class="flex-1 text-center lg:text-left max-w-2xl">
+                    <div class="inline-flex items-center gap-2 bg-white border border-yellow-600/20 shadow-sm rounded-full px-4 py-1.5 mb-8">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                        </span>
+                        <span class="text-xs font-bold tracking-wide uppercase text-yellow-700">Vagas Abertas para o Pack</span>
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-[1.1] mb-6 font-serif tracking-tight">
+                        Seus Topos de Bolos Merecem <br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-600 relative">
+                            Artes Sacras
+                            <svg class="absolute w-full h-3 -bottom-1 left-0 text-yellow-600/20" viewBox="0 0 100 10" preserveAspectRatio="none">
+                                <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="8" fill="none" />
+                            </svg>
+                        </span>
+                    </h1>
+                    
+                    <p class="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed font-light max-w-xl mx-auto lg:mx-0">
+                        Pare de perder horas procurando imagens na internet. Tenha acesso imediato ao acervo premium de topos religiosos mais completo do Brasil.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+                        <button onclick="scrollToPricing()" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold text-lg px-10 h-16 shadow-xl shadow-yellow-600/20 rounded-full transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3 group">
+                            Quero Meu Pack Agora
+                            <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-y-4 gap-x-8 text-left max-w-md mx-auto lg:mx-0 border-t border-gray-100 pt-8">
+                        <div class="flex items-center gap-3 text-sm font-medium text-gray-700">
+                            <div class="bg-green-50 p-1 rounded-full shrink-0"><i data-lucide="check" class="w-3.5 h-3.5 text-green-600"></i></div>
+                            Arquivos em Alta Resolução
+                        </div>
+                        <div class="flex items-center gap-3 text-sm font-medium text-gray-700">
+                            <div class="bg-green-50 p-1 rounded-full shrink-0"><i data-lucide="check" class="w-3.5 h-3.5 text-green-600"></i></div>
+                            Editável no Canva (Grátis)
+                        </div>
+                        <div class="flex items-center gap-3 text-sm font-medium text-gray-700">
+                            <div class="bg-green-50 p-1 rounded-full shrink-0"><i data-lucide="check" class="w-3.5 h-3.5 text-green-600"></i></div>
+                            Acesso Vitalício
+                        </div>
+                        <div class="flex items-center gap-3 text-sm font-medium text-gray-700">
+                            <div class="bg-green-50 p-1 rounded-full shrink-0"><i data-lucide="check" class="w-3.5 h-3.5 text-green-600"></i></div>
+                            Suporte via WhatsApp
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Content -->
+                <div class="flex-1 relative w-full max-w-[600px]">
+                    <div class="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-yellow-600/10 border-[8px] border-white bg-white mb-6">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-black/20 to-transparent z-10 pointer-events-none mix-blend-overlay"></div>
+                        <img src="images/hero-image.png" alt="Confeiteira feliz mostrando bolo com topo religioso" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-1000 ease-in-out">
+                    </div>
+
+                    <!-- Content below photo -->
+                    <div class="flex flex-col items-center gap-6 px-4">
+                        <!-- Social Proof -->
+                        <div class="bg-white/80 backdrop-blur p-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center gap-3 w-full max-w-sm">
+                            <div class="flex -space-x-3">
+                                <div class="w-10 h-10 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center text-[10px] font-bold text-gray-500 overflow-hidden">
+                                    <img src="https://i.pravatar.cc/100?img=21" alt="user">
+                                </div>
+                                <div class="w-10 h-10 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center text-[10px] font-bold text-gray-500 overflow-hidden">
+                                    <img src="https://i.pravatar.cc/100?img=22" alt="user">
+                                </div>
+                                <div class="w-10 h-10 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center text-[10px] font-bold text-gray-500 overflow-hidden">
+                                    <img src="https://i.pravatar.cc/100?img=23" alt="user">
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <div class="flex justify-center text-yellow-400 mb-1 gap-0.5">
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                </div>
+                                <p class="text-sm font-medium text-gray-600">Aprovado por <span class="font-bold text-gray-900">+1.200 confeiteiras</span></p>
+                            </div>
+                        </div>
+
+                        <!-- Mobile/Extra CTA -->
+                        <button onclick="scrollToPricing()" class="w-full max-w-sm bg-green-600 hover:bg-green-700 text-white font-bold text-lg h-14 shadow-lg shadow-green-600/20 rounded-xl transition-all hover:scale-105 flex items-center justify-center gap-3">
+                            <i data-lucide="download" class="w-5 h-5"></i>
+                            Baixar Pack Agora
+                        </button>
+                    </div>
+                    
+                    <!-- Decorative blob behind -->
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-gradient-to-tr from-yellow-600/20 to-amber-200/20 rounded-[3rem] -rotate-3 -z-10 blur-xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase Section -->
+    <section class="py-20 bg-amber-50/30 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 mix-blend-multiply" style="background-image: url('https://grainy-gradients.vercel.app/noise.svg');"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <div class="inline-block mb-4">
+                    <span class="bg-yellow-600/10 text-yellow-600 font-bold tracking-wider uppercase text-xs px-3 py-1 rounded-full border border-yellow-600/20">
+                        Acervo Premium
+                    </span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-serif">
+                    Beleza que <span class="italic text-yellow-600">Encanta</span> Clientes
+                </h2>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Não perca tempo criando do zero. Nossos modelos já vêm prontos para imprimir e encantar. 
+                    Perfeitos para todas as ocasiões religiosas.
+                </p>
+            </div>
+
+            <!-- Featured Collection Image -->
+            <div class="mb-20 rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white">
+                <div class="relative aspect-[21/9] w-full">
+                    <img src="images/collection-image.png" alt="Coleção de Artes Sacras" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-8">
+                        <div>
+                            <h3 class="text-white text-2xl md:text-3xl font-bold font-serif mb-2">Coleção Artes Sacras</h3>
+                            <p class="text-white/90 font-medium flex items-center gap-2">
+                                <i data-lucide="sparkles" class="w-4 h-4 text-yellow-400"></i>
+                                Incluído no Pacote Premium
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Item 1 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-xl aspect-[4/5] bg-white border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="absolute top-4 left-4 z-20 bg-white/90 backdrop-blur text-gray-800 text-xs font-bold px-3 py-1 rounded-full shadow-sm">Mais Baixado</div>
+                    <img src="images/showcase-1.png" alt="Batizado & Anjos" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="bg-white text-gray-900 rounded-full p-4 shadow-lg">
+                            <i data-lucide="download" class="w-6 h-6"></i>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                        <h3 class="text-white text-xl font-bold font-serif">Batizado & Anjos</h3>
+                        <p class="text-white/80 text-sm mt-1">Arquivo Digital HD</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-xl aspect-[4/5] bg-white border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="absolute top-4 left-4 z-20 bg-white/90 backdrop-blur text-gray-800 text-xs font-bold px-3 py-1 rounded-full shadow-sm">Novo</div>
+                    <img src="images/showcase-2.png" alt="Primeira Eucaristia" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="bg-white text-gray-900 rounded-full p-4 shadow-lg">
+                            <i data-lucide="download" class="w-6 h-6"></i>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                        <h3 class="text-white text-xl font-bold font-serif">Primeira Eucaristia</h3>
+                        <p class="text-white/80 text-sm mt-1">Arquivo Digital HD</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-xl aspect-[4/5] bg-white border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="absolute top-4 left-4 z-20 bg-white/90 backdrop-blur text-gray-800 text-xs font-bold px-3 py-1 rounded-full shadow-sm">Clássico</div>
+                    <img src="images/showcase-3.png" alt="Nossa Senhora" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="bg-white text-gray-900 rounded-full p-4 shadow-lg">
+                            <i data-lucide="download" class="w-6 h-6"></i>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                        <h3 class="text-white text-xl font-bold font-serif">Nossa Senhora</h3>
+                        <p class="text-white/80 text-sm mt-1">Arquivo Digital HD</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-yellow-50/10">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-serif">O Que Nossas Clientes Dizem</h2>
+                <div class="flex justify-center gap-1">
+                    <i data-lucide="star" class="w-6 h-6 text-yellow-400 fill-yellow-400"></i>
+                    <i data-lucide="star" class="w-6 h-6 text-yellow-400 fill-yellow-400"></i>
+                    <i data-lucide="star" class="w-6 h-6 text-yellow-400 fill-yellow-400"></i>
+                    <i data-lucide="star" class="w-6 h-6 text-yellow-400 fill-yellow-400"></i>
+                    <i data-lucide="star" class="w-6 h-6 text-yellow-400 fill-yellow-400"></i>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg relative">
+                    <i data-lucide="quote" class="absolute top-8 right-8 w-10 h-10 text-yellow-600/10 fill-current"></i>
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="images/testimonial-1.png" alt="Maria Silva" class="w-14 h-14 rounded-full object-cover border-2 border-yellow-600">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Maria Silva</h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-wide">Patrícia Confeitaria</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic leading-relaxed">"Só com o topo da Nossa Senhora eu já paguei o pacote todo. Minhas clientes amaram e já pediram mais modelos!"</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg relative">
+                    <i data-lucide="quote" class="absolute top-8 right-8 w-10 h-10 text-yellow-600/10 fill-current"></i>
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="images/testimonial-2.png" alt="Ana Costa" class="w-14 h-14 rounded-full object-cover border-2 border-yellow-600">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Ana Costa</h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-wide">Cláudia Menezes</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic leading-relaxed">"Sou péssima com computador, mas consegui fácil. Me salvou numa encomenda urgente de batizado."</p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg relative">
+                    <i data-lucide="quote" class="absolute top-8 right-8 w-10 h-10 text-yellow-600/10 fill-current"></i>
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="images/testimonial-3.png" alt="Juliana Santos" class="w-14 h-14 rounded-full object-cover border-2 border-yellow-600">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Juliana Santos</h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-wide">Artesã</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic leading-relaxed">"Imprimi na Epson simples e ficou perfeito. Cores vivas e tamanho certo! O suporte também é excelente."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-24 bg-gradient-to-b from-white to-amber-50/50 relative" id="pricing">
+        <div class="absolute inset-0 opacity-20 mix-blend-soft-light pointer-events-none" style="background-image: url('https://grainy-gradients.vercel.app/noise.svg');"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-serif">Escolha o Plano Ideal</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Invista menos que o valor de um único topo e tenha acesso ao acervo completo.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-center">
+                <!-- Basic Plan -->
+                <div class="bg-white rounded-[2rem] p-8 shadow-xl border border-gray-100 flex flex-col relative h-fit">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-gray-700 mb-2 font-serif">Pacote Básico</h3>
+                        <div class="flex items-end gap-2 mb-2">
+                            <span class="text-gray-400 line-through text-lg mb-1">R$ 49,90</span>
+                            <span class="text-5xl font-bold text-gray-900 tracking-tight">R$ 10</span>
+                        </div>
+                        <p class="text-sm bg-green-100 text-green-700 font-bold px-3 py-1 rounded-full inline-block">Economize 80%</p>
+                    </div>
+
+                    <div class="h-px w-full bg-gray-100 my-6"></div>
+
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-center gap-3 text-gray-600"><div class="bg-gray-100 p-1 rounded-full"><i data-lucide="check" class="w-3 h-3 text-gray-600"></i></div> +50 modelos religiosos</li>
+                        <li class="flex items-center gap-3 text-gray-600"><div class="bg-gray-100 p-1 rounded-full"><i data-lucide="check" class="w-3 h-3 text-gray-600"></i></div> Arquivos em alta resolução</li>
+                        <li class="flex items-center gap-3 text-gray-600"><div class="bg-gray-100 p-1 rounded-full"><i data-lucide="check" class="w-3 h-3 text-gray-600"></i></div> Prontos para imprimir</li>
+                        <li class="flex items-center gap-3 text-gray-600"><div class="bg-gray-100 p-1 rounded-full"><i data-lucide="check" class="w-3 h-3 text-gray-600"></i></div> Tutorial básico</li>
+                        <li class="flex items-center gap-3 text-gray-600"><div class="bg-gray-100 p-1 rounded-full"><i data-lucide="check" class="w-3 h-3 text-gray-600"></i></div> Acesso vitalício</li>
+                    </ul>
+
+                    <a href="https://pay.wiapy.com/bBYLL7vYA8" class="w-full bg-white hover:bg-gray-50 text-gray-900 border-2 border-gray-200 h-14 rounded-xl font-bold text-lg transition-all flex items-center justify-center">
+                        Quero o Básico
+                    </a>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="bg-white rounded-[2.5rem] p-1 shadow-2xl relative z-10">
+                    <div class="absolute inset-0 bg-gradient-to-br from-yellow-600 via-yellow-400 to-amber-600 rounded-[2.5rem] -z-10 blur-sm opacity-50"></div>
+                    <div class="bg-white rounded-[2.3rem] p-8 md:p-10 h-full border border-yellow-600/20 relative overflow-hidden">
+                        
+                        <!-- Ribbon -->
+                        <div class="absolute top-0 right-0 bg-gradient-to-r from-yellow-600 to-amber-600 text-white text-xs font-bold px-6 py-2 rounded-bl-2xl uppercase tracking-wider shadow-lg z-20">
+                            Mais Vendido
+                        </div>
+
+                        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-yellow-600 to-amber-600"></div>
+
+                        <div class="mb-8">
+                            <div class="flex items-center gap-2 text-yellow-600 font-bold text-sm uppercase tracking-wide">
+                                <i data-lucide="zap" class="w-4 h-4"></i>
+                                Oferta VIP
+                            </div>
+                            <h3 class="text-3xl font-bold text-gray-900 mb-4 font-serif">Pacote Premium</h3>
+                            <div class="flex items-end gap-3 mb-2">
+                                <span class="text-gray-400 line-through text-xl mb-2">R$ 97,90</span>
+                                <span class="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-600 tracking-tight">R$ 27</span>
+                            </div>
+                            
+                            <div class="flex items-center gap-2 text-amber-600 bg-amber-50 px-3 py-1.5 rounded-lg w-fit mt-3">
+                                <i data-lucide="clock" class="w-4 h-4"></i>
+                                <span class="text-xs font-bold">Preço sobe em breve</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-b from-gray-50 to-white rounded-2xl p-6 mb-8 border border-gray-100 shadow-inner">
+                            <p class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                <i data-lucide="gift" class="w-5 h-5 text-yellow-600"></i>
+                                Você recebe TUDO do Básico +
+                            </p>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3 text-sm">
+                                    <i data-lucide="check" class="w-5 h-5 text-yellow-600 shrink-0 mt-0.5"></i>
+                                    <span class="font-bold text-gray-800">+30 modelos exclusivos de Natal</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-sm">
+                                    <i data-lucide="check" class="w-5 h-5 text-yellow-600 shrink-0 mt-0.5"></i>
+                                    <span class="font-bold text-gray-800">Guia: Topos Profissionais</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-sm">
+                                    <i data-lucide="check" class="w-5 h-5 text-yellow-600 shrink-0 mt-0.5"></i>
+                                    <span class="text-gray-600">15 convites religiosos editáveis</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-sm">
+                                    <i data-lucide="check" class="w-5 h-5 text-yellow-600 shrink-0 mt-0.5"></i>
+                                    <span class="text-gray-600">Pack de elementos decorativos</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-sm">
+                                    <i data-lucide="check" class="w-5 h-5 text-yellow-600 shrink-0 mt-0.5"></i>
+                                    <span class="text-gray-600">Mockups profissionais</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-sm">
+                                    <i data-lucide="check" class="w-5 h-5 text-yellow-600 shrink-0 mt-0.5"></i>
+                                    <span class="font-bold text-green-600">Atualizações mensais GRÁTIS</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="https://pay.wiapy.com/zX0c_VRcJ" class="w-full bg-gradient-to-r from-yellow-600 to-amber-600 hover:from-yellow-600/90 hover:to-amber-600/90 text-white h-16 rounded-2xl font-bold shadow-xl shadow-yellow-600/30 text-xl transform transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2">
+                            Quero Acesso Completo
+                            <i data-lucide="shield-check" class="w-5 h-5 opacity-80"></i>
+                        </a>
+                        
+                        <p class="text-center text-xs text-gray-400 mt-4 flex items-center justify-center gap-1.5">
+                            <i data-lucide="shield-check" class="w-3 h-3"></i>
+                            Garantia de 7 dias ou seu dinheiro de volta
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 font-serif">Perguntas Frequentes</h2>
+            </div>
+
+            <div class="space-y-2">
+                <!-- FAQ Item 1 -->
+                <div class="border-b border-gray-100">
+                    <button class="accordion-toggle w-full text-left font-medium text-gray-800 hover:text-yellow-600 py-4 flex justify-between items-center">
+                        O acesso é vitalício?
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content hidden text-gray-600 pb-4">
+                        Sim! Você compra uma vez e usa para sempre. Pode baixar quantas vezes quiser.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="border-b border-gray-100">
+                    <button class="accordion-toggle w-full text-left font-medium text-gray-800 hover:text-yellow-600 py-4 flex justify-between items-center">
+                        É fácil editar?
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content hidden text-gray-600 pb-4">
+                        Muito! Basta abrir no Canva (gratuito ou pro), trocar nome e salvar. Enviamos um vídeo tutorial.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border-b border-gray-100">
+                    <button class="accordion-toggle w-full text-left font-medium text-gray-800 hover:text-yellow-600 py-4 flex justify-between items-center">
+                        Posso imprimir em casa?
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content hidden text-gray-600 pb-4">
+                        Sim! Arquivos em alta resolução prontos para gráficas e impressoras domésticas comuns.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="border-b border-gray-100">
+                    <button class="accordion-toggle w-full text-left font-medium text-gray-800 hover:text-yellow-600 py-4 flex justify-between items-center">
+                        O acesso é imediato?
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content hidden text-gray-600 pb-4">
+                        Sim! O link chega automaticamente no seu e-mail após a confirmação do pagamento.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="border-b border-gray-100">
+                    <button class="accordion-toggle w-full text-left font-medium text-gray-800 hover:text-yellow-600 py-4 flex justify-between items-center">
+                        Tenho direito comercial?
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content hidden text-gray-600 pb-4">
+                        Sim! Você pode vender os topos personalizados físicos para seus clientes sem pagar nada extra.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+                <div>
+                    <h3 class="text-xl font-serif font-bold mb-2 text-yellow-600">Pack Topos Religiosos</h3>
+                    <p class="text-gray-400 text-sm max-w-xs">
+                        Arquivos digitais de alta qualidade prontos para imprimir e encantar seus clientes.
+                    </p>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-end gap-2">
+                    <div class="flex items-center gap-2 text-green-400 text-sm font-medium">
+                        <i data-lucide="shield-check" class="w-4 h-4"></i>
+                        Compra 100% Segura
+                    </div>
+                    <div class="flex gap-3 opacity-60 grayscale hover:grayscale-0 transition-all">
+                        <span class="bg-white/10 px-2 py-1 rounded text-xs">PIX</span>
+                        <span class="bg-white/10 px-2 py-1 rounded text-xs">VISA</span>
+                        <span class="bg-white/10 px-2 py-1 rounded text-xs">MASTER</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-xs text-gray-500">
+                <p>© 2025 Pack Topos Religiosos – Todos os Direitos Reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
